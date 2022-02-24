@@ -1,0 +1,22 @@
+<div>
+  <div><span>Name:</span>{{ data.name }}</div>
+  <div><span>User Name:</span>{{ data.username }}</div>
+  <div><span>Phone:</span>{{ data.phone }}</div>
+  <div><span>Email:</span>{{ data.email }}</div>
+  <div *ngIf="data.address">
+    <span>Address:</span>
+    <div class="subSubject">
+      <div><span>City:</span>{{ data.address.city }}</div>
+      <div><span>Street:</span>{{ data.address.street }}</div>
+      <div><span>Zipcode:</span>{{ data.address.zipcode }}</div>
+    </div>
+  </div>
+  <div *ngIf="data.company">
+    <span>Company:</span>
+    <div class="subSubject">
+      <div><span>Nname:</span>{{ data.company.name }}</div>
+      <div><span>bs:</span>{{ data.company.bs }}</div>
+      <div><span>cCatchPhrase:</span>{{ data.company.catchPhrase }}</div>
+    </div>
+  </div>
+</div>

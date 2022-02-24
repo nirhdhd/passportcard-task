@@ -1,0 +1,50 @@
+.container {
+  //width: 1500px;
+  width: 85%;
+  min-width: 1000px;
+  height: 550px;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  height: fit-content;
+  width: 90%;
+  //min-width: fit-content;
+  min-height: fit-content;
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 8px;
+}
+
+::ng-deep .mat-list-base .mat-list-item .mat-list-item-ripple,
+.mat-list-base .mat-list-option .mat-list-item-ripple {
+  padding: inherit;
+  margin: -9px;
+}
+
+.usersListContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  //margin: auto;
+}
+
+.details {
+  flex: 2;
+  margin-left: 15px;
+  height: fit-content;
+}
+.postsContainer {
+  overflow-y: scroll;
+  //background-color: aqua;
+  height: 330px;
+}
+.userDetailsContainer {
+  overflow-y: scroll;
+  //background-color: aqua;
+  height: 400px;
+}

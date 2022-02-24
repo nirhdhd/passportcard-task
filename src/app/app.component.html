@@ -1,0 +1,53 @@
+<!-- <form [formGroup]="form">
+  <input type="text" formControlName="query" />
+</form> -->
+
+<mat-card class="container">
+  <!-- left section - users list -->
+  <div class="usersListContainer custom-scroll-bar">
+    <mat-selection-list #users [multiple]="false">
+      <mat-list-option
+        [lessThen10Posts]="u.id"
+        class="userItem"
+        *ngFor="let u of users$ | async"
+        (click)="selectUser(u)"
+        [value]="u"
+      >
+        <app-user-list-item [data]="u"></app-user-list-item>
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <!-- right section - users details -->
+
+  <div class="details">
+    <mat-card-title style="margin-top: 18px; color: #3f51b5"
+      >{{ userDetails.name }}
+    </mat-card-title>
+    <mat-tab-group>
+      <mat-tab label="posts">
+        <form [formGroup]="form">
+          <mat-form-field
+            appearance="outline"
+            style="margin-top: 10px; margin-left: 14px"
+          >
+            <input formControlName="query" matInput placeholder="search post" />
+            <mat-icon matSuffix>filter_list</mat-icon>
+          </mat-form-field>
+        </form>
+
+        <div class="postsContainer custom-scroll-bar">
+          <app-user-post
+            (delete)="onDelete($event)"
+            *ngFor="let post of results$ | async"
+            [data]="post"
+          ></app-user-post>
+        </div>
+      </mat-tab>
+      <mat-tab label="user details ">
+        <div class="userDetailsContainer custom-scroll-bar">
+          <app-user-details [data]="userDetails"></app-user-details>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</mat-card>

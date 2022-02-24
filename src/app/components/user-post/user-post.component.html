@@ -1,0 +1,10 @@
+<mat-card class="post">
+  <mat-card-title> {{ data.title }} </mat-card-title>
+  <mat-card-content>
+    {{ data.body }}
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions align="end">
+    <button (click)="openDeleteDialog(data)" mat-button>DELETE</button>
+  </mat-card-actions>
+</mat-card>

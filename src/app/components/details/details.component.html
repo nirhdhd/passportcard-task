@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="service.details | async as data">
   <div><span>Name:</span>{{ data.name }}</div>
   <div><span>User Name:</span>{{ data.username }}</div>
   <div><span>Phone:</span>{{ data.phone }}</div>

@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+  <mat-form-field
+    appearance="outline"
+    style="margin-top: 10px; margin-left: 14px"
+  >
+    <input formControlName="query" matInput placeholder="search post" />
+    <mat-icon matSuffix>filter_list</mat-icon>
+  </mat-form-field>
+</form>
+
+<div
+  *ngIf="results$ | async as results"
+  class="postsContainer custom-scroll-bar"
+>
+  <app-post
+    *ngFor="let post of results"
+    (delete)="onDelete(post)"
+    [data]="post"
+  ></app-post>
+
+  <div class="noPostsDiv" *ngIf="results.length == 0">No posts 😕</div>
+</div>

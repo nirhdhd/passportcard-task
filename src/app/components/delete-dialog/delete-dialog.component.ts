@@ -27,10 +27,11 @@ export class DeleteDialogComponent implements OnInit {
   }
 
   deletPost() {
-    this.service.deleteUserPost(this.data.d.id).subscribe({
+    let { id, userId } = this.data.d;
+    this.service.deleteUserPost(id, userId).subscribe({
       complete: () => {
         this.dialogRef.close({
-          id: this.data.d.id,
+          id: id,
           error: null,
         });
       },
@@ -41,6 +42,7 @@ export class DeleteDialogComponent implements OnInit {
         });
       },
     });
+    this.service.getUserPosts(userId);
   }
 
   openSnackBar() {
